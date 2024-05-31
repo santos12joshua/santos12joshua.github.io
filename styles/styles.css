@@ -1,0 +1,299 @@
+body {
+    /* width: 200px; */
+    background: #00E4A5;
+    background-image: url(https://i.redd.it/tqvegod827s11.gif);
+    /* background-image: url(https://media.giphy.com/media/gdWuHK4952QBq/giphy.gif); */
+    background-size: 200px;
+    font-family: 'Bagel Fat One';    
+}
+
+ul {
+    list-style-type: none;
+}
+.container > p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container > .home {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 2px black, 0 0 1em #FA917E, 0 0 20em #FA917E;
+    color: #7E93FA;
+    font-size: 84px;
+
+    height: 100px;
+    width: 130px;
+    padding:50px; 
+    margin: 0 auto;
+    background-color: #FA917E;
+    animation-name: stretch;
+    animation-duration: 2s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container > .home > h3 {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > .image {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    background: #FA917E; 
+    padding:30px; 
+    border-radius: 300px; 
+    /* height: 100%;
+    width: 95%;
+    padding:50px; 
+    margin: 0 auto;
+    background-color: #FA917E;
+    animation-name: stretch;
+    animation-duration: 4s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.5);
+    background-color: #7E93FA;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: #FA917E;
+  }
+  100% {
+    transform: scale(1.25);
+    background-color: #00E4A5;
+  }
+}
+
+.container > .home:hover {
+  height: 100px;
+  width: 130px;
+  padding:50px; 
+  margin: 0 auto;
+  background-color: #7E93FA;
+  animation-play-state: paused;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container > body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container > .song {
+  text-shadow: #FA917E 5px 5px;
+}
+
+.scripture > h2 {
+  text-shadow: #FA917E 5px 5px;
+}
+
+.scripture > a {
+  font-size: 50px;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+.scripture > a:hover {
+  text-shadow: 2px 2px 2px black, 0 0 1em #FA917E, 0 0 20em #FA917E;
+  color: #7E93FA
+}
+
+main {
+    margin: 0;
+    padding: 50px;
+    background-color: #7E93FA;
+    width: 75%;
+    height: 75%;
+    display: flex;
+    flex: 1;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    border-style: groove;
+    border-color: #7E93FA;
+    border-width: 20px;
+  }
+  
+  main > h1, p, .browser {
+    margin: 10px;
+    padding: 5px;
+  }
+  
+  .browser {
+    background: white;
+  }
+  
+  .browser > h2, p {
+    margin: 4px;
+    font-size: 90%;
+  }
+
+  header {
+    text-align: center;
+  }
+  header.has-background {
+    background-color: #7E93FA;
+    padding-bottom: 60px;
+  }
+  
+  .header-nav {
+    width: 29%;
+    font-family: 'Bagel Fat One';
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-bottom: 30px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #7E93FA;
+  }
+  @media screen and (max-width: 767px) {
+    .header-nav {
+      display: none;
+    }
+  }
+  .header-nav ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .header-nav ul li {
+    border-bottom: 1px solid #111111;
+    padding: 8px;
+  }
+  @media screen and (max-width: 767px) {
+    .header-nav ul li {
+      border-bottom: none;
+    }
+  }
+  .header-nav ul li.selected a {
+    color: #111111;
+  }
+  .header-nav ul a {
+    color: #555555;
+    display: block;
+    font-size: 15px;
+    padding: 8px;
+    text-decoration: none;
+  }
+  @media screen and (max-width: 767px) {
+    .header-nav ul a {
+      font-size: 16px;
+      text-decoration: underline;
+    }
+  }
+  .header-nav ul a:hover, .header-nav ul a:focus {
+    color: #FA917E !important;
+  }
+  .header-nav.mobile-nav {
+    display: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    .header-nav.mobile-nav {
+      display: block;
+      font-family: "Cutive", serif;
+      padding-bottom: 16px;
+    }
+  }
+  
+
+  .store-header {
+    font-size: 42px;
+    letter-spacing: 4px;
+    width: 15%;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    text-shadow: #FA917E 5px 5px;
+    background-color: #7E93FA;
+    border-style: solid;
+    border-color: #FA917E;
+    border-width: 6px;
+  }
+ 
+  @media screen and (max-width: 767px) {
+    .store-header {
+      font-size: 36px;
+      letter-spacing: 2px;
+    }
+  }
+
+  .branding {
+    font-size: 20px;
+    margin: 76px auto;
+    text-transform: uppercase;
+  }
+  .branding a {
+    color: black;
+    display: block;
+    font-size: 15px;
+    padding: 8px;
+    text-decoration: none;
+  }
+  a .store-header:hover, a .store-header:focus {
+    text-decoration: none;
+    color: #7E93FA !important;
+    background-color: #00E4A5;
+  }
+
+  /* Song embeded code */
+  div.song, iframe {
+    display: block;
+    margin: 0 auto;
+  }
+
+  #map {
+    height: 500px;
+    width: 100%;
+    text-align: left;
+  }
