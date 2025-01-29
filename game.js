@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const grid = document.getElementById("grid");
     let board = Array(4).fill().map(() => Array(4).fill(0));
-    
+
     function createBoard() {
         grid.innerHTML = "";
         board.forEach((row, r) => {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-    
+
     function addRandomTile() {
         let emptyTiles = [];
         board.forEach((row, r) => {
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function moveLeft() {
-        board = board.map(row => slide(combine(slide(row))));
+        board = board.map(row => slide(combine(slide(row)))); 
         addRandomTile();
         createBoard();
     }
@@ -92,12 +92,50 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Swipe detection for mobile
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    function handleSwipe() {
+        let deltaX = touchEndX - touchStartX;
+        let deltaY = touchEndY - touchStartY;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            // Horizontal swipe
+            if (deltaX > 0) {
+                moveRight();
+            } else {
+                moveLeft();
+            }
+        } else {
+            // Vertical swipe
+            if (deltaY > 0) {
+                moveDown();
+            } else {
+                moveUp();
+            }
+        }
+    }
+
+    grid.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    });
+
+    grid.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        touchEndY = e.changedTouches[0].clientY;
+        handleSwipe();
+    });
+
     function initGame() {
         addRandomTile();
         addRandomTile();
         createBoard();
     }
-    
+
     initGame();
 
     function updateTime() {
@@ -110,11 +148,10 @@ document.addEventListener("DOMContentLoaded", () => {
             timeSpan.textContent = `${hours}:${minutes}:${seconds}`;
         }
     }
-    
+
     // Update the time every second
     setInterval(updateTime, 1000);
     
     // Set the time immediately on page load
     updateTime();
-    
 });
